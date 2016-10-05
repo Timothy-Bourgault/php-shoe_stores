@@ -44,6 +44,18 @@
             $this->assertEquals($new_name, $test_Store->getName());
         }
 
+        function test_save()
+        {
+            // Arrange
+            $name = "Joel's Souls";
+            $test_Store = new Stylist($name);
+            $test_Store->save();
+            // Act
+            $result = Stylist::getAll();
+            // Assert
+            $this->assertEquals($test_Store, $result[0]);
+        }
+
     }
 
 

@@ -21,6 +21,18 @@
             Store::deleteAll();
         }
 
+        function test_getName()
+        {
+            // Arrange
+            $name = "Joel's Soles";
+            $test_Store = new Store($name);
+            // Act
+            $result = $test_Store->getName();
+            // Assert
+            $this->assertEquals($name, $result);
+        }
+
     }
 
-?>        
+
+?>

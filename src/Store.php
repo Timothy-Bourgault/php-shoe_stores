@@ -16,10 +16,6 @@
             return $this->name;
         }
 
-        function setName()
-        {
-            $this->name = (string) $new_name;
-        }
     }
 
 ?>

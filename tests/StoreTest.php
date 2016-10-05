@@ -36,7 +36,7 @@
         {
             // Arrange
             $name = "Joel's Soles";
-            $test_store = new Store($name);
+            $test_Store = new Store($name);
             // Act
             $new_name = "Joel's Souls";
             $test_Store->setName($new_name);

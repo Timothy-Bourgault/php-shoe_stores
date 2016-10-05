@@ -17,8 +17,8 @@
 
         protected function tearDown()
         {
-            Brand::deleteAll();
-            Store::deleteAll();
+            // Brand::deleteAll();
+            // Store::deleteAll();
         }
 
         function test_getName()

@@ -31,6 +31,19 @@
 
 // Static Functions
 
+        static function find($search_id)
+        {
+            $result_brand = null;
+            $brands = Brand::getAll();
+            foreach($brands as $brand) {
+                $brand_id = $brand->getId();
+                if ($brand_id == $search_id) {
+                    $result_brand = $brand;
+                }
+            }
+            return $result_brand;
+        }
+
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM brand;");

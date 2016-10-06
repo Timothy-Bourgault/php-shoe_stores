@@ -54,5 +54,17 @@
             $this->assertEquals($test_brand, $output);
 
         }
+
+        function test_getId()
+        {
+            // Arrange
+            $name = "Vibram";
+            $id = "6";
+            $test_brand = new Brand($name, $id);
+            // Act
+            $result = $test_brand->getId();
+            // Assert
+            $this->assertEquals($id, $result);
+        }
      }
 ?>

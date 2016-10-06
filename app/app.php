@@ -1,9 +1,9 @@
 <?php
 
+    date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/Brand.php";
     require_once __DIR__."/../src/Store.php";
-    date_default_timezone_set('America/Los_Angeles');
 
     use Symfony\Component\Debug\Debug;
     use Symfony\Component\HttpFoundation\Request;
@@ -56,7 +56,11 @@
         return $app->redirect("/");
     });
 
-
+    $app->get("/get_store/{id}", function($id) use ($app) {
+        $selected_store = Store::find($id);
+        $selected_store_brands = $selected_store->getStoreBrands();
+        return $app['twig']->render('stores.html.twig', array('store' => $selected_store, 'brands' => $selected_store_brands));
+    });
 
 return $app;
 

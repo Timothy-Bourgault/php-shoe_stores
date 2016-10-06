@@ -32,6 +32,18 @@
             $this->assertEquals("Vibram", $output);
         }
 
+        function test_setName()
+        {
+            // Arrange
+            $name = "Vibram";
+            $test_brand = new Brand($name);
+            // Act
+            $new_name = "Adidas";
+            $test_brand->setName($new_name);
+            // Assert
+            $this->assertEquals($new_name, $test_brand->getName());
+        }
+
         function test_save()
         {
             // Arrange

@@ -45,7 +45,21 @@
             $GLOBALS['DB']->exec("DELETE FROM store WHERE id = {$this->id};");
         }
 
+
 // Static Functions
+
+        static function find($search_id)
+        {
+            $result_store = null;
+            $stores = Store::getAll();
+            foreach($stores as $store) {
+                $store_id = $store->getId();
+                if ($store_id == $search_id) {
+                    $result_store = $store;
+                }
+            }
+            return $result_store;
+        }
 
         static function getAll()
         {
@@ -64,6 +78,8 @@
         {
             $GLOBALS['DB']->exec("DELETE FROM store;");
         }
+
+
 
     }
 

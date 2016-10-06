@@ -1,4 +1,4 @@
-# _shoe_brands_
+# _shoe_stores_
 
 #### _An application that allows users to find all stores in town that carry a certain brand, or look at a specific store to see what brands they carry, Friday, October 5, 2016_
 
@@ -15,15 +15,13 @@ _Shows search results for either brand of shoes, or stores and what brands they 
 | App allows for store information to be saved and assigns the store an Id | Input: "Shoe Circus" | Output Saved: name - "Shoe Circus", id - "1" |
 | App allows for a single store to be erased | Input: push "Remove This Store" button/ Example Store: "Shoe Circus" | Output: "" |
 | App allows for entire list of stores entered to be erased in one fell swoop | Input: push "Clear Store List" button/ Example List: "Shoe Circus", "Just For Feet"| Output Example List: "" |
-| App can return the name of a brand entered | Input: "Vibram" | Output: "Vibram" |
-| App allows for a brand's name to be updated | Saved Name: "Vibram" Input: "Adidas" | Output: "Adidas" |
-| App allows for brand information to be saved and assigns the brand an Id | Input: "Adidas" | Output Saved: name - "Adidas", id - "1" |
-| App allows for a single brand to be erased | Input: push "Remove This Brand" button/ Example Store: "Adidas" | Output: "" |
-| App allows for a brand to be added to a store's brand list| Input: "Keds"/ Example Store Brand List: "Vibram", "Adidas" | Output Updated List: "Vibram", "Adidas", "Keds" |
-| App allows for a single brand of shoes to be deleted from a store's brand list | Input: push "Delete Brand" button next to Example Brand: "Vibram" in Example Store Brand List: "Vibram", "Adidas", "Keds" | Output Updated Store Brand List: "Adidas", "Keds" |
-| App allows for entire list of brands entered to be erased in one fell swoop | Input: push "Clear Brand List" button/ Example List: "Vibram", "Adidas"| Output Example List: "" |
 | App returns a list of brands sold in a store when the store's name is searched | Input Brand Search By Store: "Vagabond Shoes" | Output Brands: "Vibram", "Adidas", "Keds" |
+| App can return the name of a brand entered | Input: "Vibram" | Output: "Vibram" |
+| App allows for brand information to be saved and assigns the brand an Id | Input: "Adidas" | Output Saved: name - "Adidas", id - "1" |
+| App allows for a brand to be added to a store's brand list| Input: "Keds"/ Example Store Brand List: "Vibram", "Adidas" | Output Updated List: "Vibram", "Adidas", "Keds" |
 | App returns a list of stores that stock a brand when the brand's name is searched | Input Store Search By Brand: "Vibram" | Output Stores: "Vagabond Shoes", "Marshalls", "REI" |
+
+
 
 
 ## SQL Commands Used

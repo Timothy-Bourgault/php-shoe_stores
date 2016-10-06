@@ -78,5 +78,20 @@
             // Assert
             $this->assertEquals($id, $result);
         }
+
+        function test_getAll()
+        {
+            // Arrange
+            $name = "Vibram";
+            $test_Brand1 = new Brand($name);
+            $test_Brand1->save();
+            $name = "Zippies";
+            $test_Brand2 = new Brand($name);
+            $test_Brand2->save();
+            // Act
+            $result = Brand::getAll();
+            // Assert
+            $this->assertEquals([$test_Brand1, $test_Brand2], $result);
+        }
      }
 ?>

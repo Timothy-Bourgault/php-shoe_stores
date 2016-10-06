@@ -34,6 +34,8 @@
           $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
+        
+
 // Static Functions
 
         static function find($search_id)

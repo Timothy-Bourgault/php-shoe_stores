@@ -18,7 +18,7 @@
         protected function tearDown()
         {
             // Brand::deleteAll();
-            // Store::deleteAll();
+            Store::deleteAll();
         }
 
         function test_getName()
@@ -44,17 +44,30 @@
             $this->assertEquals($new_name, $test_Store->getName());
         }
 
-        function test_save()
+        function test_getId()
         {
             // Arrange
-            $name = "Joel's Souls";
-            $test_Store = new Stylist($name);
-            $test_Store->save();
+            $name = "Joel's Soles";
+            $id = "4";
+            $test_Store = new Store($name, $id);
             // Act
-            $result = Stylist::getAll();
+            $result = $test_Store->getName();
             // Assert
-            $this->assertEquals($test_Store, $result[0]);
+            $this->assertEquals($name, $result);
         }
+
+        // function test_save()
+        // {
+        //     // Arrange
+        //     $name = "Joel's Souls";
+        //     $store_id = ""
+        //     $test_Store = new Store($name);
+        //     // Act
+        //     $test_Store->save();
+        //     $result = Store::getAll();
+        //     // Assert
+        //     $this->assertEquals([$test_Store], $result);
+        // }
 
     }
 

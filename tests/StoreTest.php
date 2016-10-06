@@ -44,6 +44,7 @@
             $this->assertEquals($new_name, $test_Store->getName());
         }
 
+
         function test_getId()
         {
             // Arrange

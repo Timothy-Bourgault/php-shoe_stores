@@ -56,18 +56,18 @@
             $this->assertEquals($id, $result);
         }
 
-        // function test_save()
-        // {
-        //     // Arrange
-        //     $name = "Joel's Souls";
-        //     $store_id = ""
-        //     $test_Store = new Store($name);
-        //     // Act
-        //     $test_Store->save();
-        //     $result = Store::getAll();
-        //     // Assert
-        //     $this->assertEquals([$test_Store], $result);
-        // }
+        function test_save()
+        {
+            // Arrange
+            $name = "Joels Souls";
+            $test_Store = new Store($name);
+            // Act
+            $test_Store->getId();
+            $test_Store->save();
+            $result = Store::getAll();
+            // Assert
+            $this->assertEquals([$test_Store], $result);
+        }
 
     }
 

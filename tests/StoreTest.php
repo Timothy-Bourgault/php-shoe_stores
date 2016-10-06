@@ -70,6 +70,21 @@
             $this->assertEquals([$test_Store], $result);
         }
 
+        function test_getAll()
+        {
+            // Arrange
+            $name = "Joels Souls";
+            $test_Store1 = new Store($name);
+            $test_Store1->save();
+            $name = "Payless Shoes";
+            $test_Store2 = new Store($name);
+            $test_Store2->save();
+            // Act
+            $result = Store::getAll();
+            // Assert
+            $this->assertEquals([$test_Store1, $test_Store2], $result);
+        }
+
     }
 
 

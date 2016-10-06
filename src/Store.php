@@ -40,6 +40,11 @@
             $this->setName($new_name);
         }
 
+        function deleteStore()
+        {
+            $GLOBALS['DB']->exec("DELETE FROM store WHERE id = {$this->id};");
+        }
+
 // Static Functions
 
         static function getAll()

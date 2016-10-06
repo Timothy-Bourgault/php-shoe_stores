@@ -43,6 +43,16 @@
             $this->assertEquals($test_brand, $output[0]);
         }
 
+        function test_find()
+        {
+            // Arrange
+            $test_brand = new Brand("Vibram");
+            $test_brand->save();
+            // Act
+            $output = Brand::find($test_brand->getId());
+            // Assert
+            $this->assertEquals($test_brand, $output);
 
+        }
      }
 ?>

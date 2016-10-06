@@ -15,13 +15,11 @@ _Shows search results for either brand of shoes, or stores and what brands they 
 | App allows for store information to be saved and assigns the store an Id | Input: "Shoe Circus" | Output Saved: name - "Shoe Circus", id - "1" |
 | App allows for a single store to be erased | Input: push "Remove This Store" button/ Example Store: "Shoe Circus" | Output: "" |
 | App allows for entire list of stores entered to be erased in one fell swoop | Input: push "Clear Store List" button/ Example List: "Shoe Circus", "Just For Feet"| Output Example List: "" |
+| App allows for a brand to be added to a store's brand list| Input: "Keds"/ Example Store Brand List: "Vibram", "Adidas" | Output Updated List: "Vibram", "Adidas", "Keds" |
 | App returns a list of brands sold in a store when the store's name is searched | Input Brand Search By Store: "Vagabond Shoes" | Output Brands: "Vibram", "Adidas", "Keds" |
 | App can return the name of a brand entered | Input: "Vibram" | Output: "Vibram" |
 | App allows for brand information to be saved and assigns the brand an Id | Input: "Adidas" | Output Saved: name - "Adidas", id - "1" |
-| App allows for a brand to be added to a store's brand list| Input: "Keds"/ Example Store Brand List: "Vibram", "Adidas" | Output Updated List: "Vibram", "Adidas", "Keds" |
 | App returns a list of stores that stock a brand when the brand's name is searched | Input Store Search By Brand: "Vibram" | Output Stores: "Vagabond Shoes", "Marshalls", "REI" |
-
-
 
 
 ## SQL Commands Used
@@ -35,6 +33,8 @@ _Shows search results for either brand of shoes, or stores and what brands they 
 * _INSERT INTO (table name) (name, scheduled_days, specialties) VALUES ('Sally', 'Monday, Wednesday, and Friday', 'cut, color, curl, style, scalp massage');_
 * _SELECT * FROM (table name);_
 * _ALTER TABLE (table name) DROP (column name);_
+* _CREATE TABLE (join table name) (id serial PRIMARY KEY, category_id int, task_id int);_
+* _DROP DATABASE shoe_stores_test;_
 
 ## Setup/Installation Requirements
 

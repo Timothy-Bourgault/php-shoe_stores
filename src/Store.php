@@ -45,6 +45,11 @@
             $GLOBALS['DB']->exec("DELETE FROM store WHERE id = {$this->id};");
         }
 
+        function addBrand()
+        {
+            $GLOBALS['DB']->exec("INSERT INTO store_brand (store_id, brand_id) VALUES ({$new_brand->getId()}, {$this->id});");
+        }
+
 
 // Static Functions
 

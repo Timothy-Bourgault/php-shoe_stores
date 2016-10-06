@@ -1,28 +1,27 @@
 <?php
 
-    /**
-    * @backupGlobals disabled
-    * @backupsStaticAttributes disabled
-    **/
-
-    require_once "src/Brand.php";
-
-    $server = 'mysql:host=localhost;dbname=shoe_stores_test';
-    $username = 'root';
-    $password = 'root';
-    $DB = new PDO($server, $username, $password);
-
-    class BrandTest extends PHPUnit_Framework_TestCase
+    class Brand
     {
+        private $name;
+        private $id;
 
-        protected function tearDown()
+        function __construct($name, $id = null)
         {
-            Brand::deleteAll();
-            Store::deleteAll();
+            $this->name = $name;
+            $this->id = $id;
         }
 
+        function getName()
+        {
+            return $this->name;
+        }
 
-     }
+        function save()
+        {
+          $GLOBALS['DB']->exec("INSERT INTO brand(name) VALUES ('{$this->getName()}')");
+          $this->id = $GLOBALS['DB']->lastInsertId();
+        }
 
+    }
 
- ?>
+?>

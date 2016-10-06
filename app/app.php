@@ -32,6 +32,20 @@
         return $app['twig']->render('index.html.twig', array('brands' => $brands, 'stores' => $stores));
     });
 
+    $app->post("/add_store", function() use ($app) {
+        $name = $_POST['store_name'];
+        $new_store = new Store($name);
+        $new_store->save();
+        return $app->redirect("/");
+    });
+
+    $app->post("/stores/delete_all", function() use ($app) {
+        Store::deleteAll();
+        return $app->redirect("/");
+    });
+
+
+
 return $app;
 
 ?>

@@ -85,6 +85,20 @@
             $this->assertEquals([$test_Store1, $test_Store2], $result);
         }
 
+        function test_updateName()
+        {
+            // Arrange
+            $name = "Joels Souls";
+            $test_Store = new Store($name);
+            $test_Store->save();
+            // Act
+            $new_name = "Joels Soles";
+            $test_Store->updateName($new_name);
+            $result = $test_Store->getName();
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
+
     }
 
 

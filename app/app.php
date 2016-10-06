@@ -44,6 +44,18 @@
         return $app->redirect("/");
     });
 
+    $app->post("/add_brand", function() use ($app) {
+        $name = $_POST['brand_name'];
+        $new_brand = new Brand($name);
+        $new_brand->save();
+        return $app->redirect("/");
+    });
+
+    $app->post("/brands/delete_all", function() use ($app) {
+        Brand::deleteAll();
+        return $app->redirect("/");
+    });
+
 
 
 return $app;

@@ -19,7 +19,7 @@
           {% if stores is not empty %}
             <ul>
               {% for store in stores %}
-                <li><a href="/add_store/{{ store.getId }}">{{ store.getName }}</a>
+                <li><a href="/get_store/{{ store.getId }}">{{ store.getName }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -53,15 +53,15 @@
               <h3>Enter some into the list with the form below...👇</h3>
             {% endif %}
             <form class="clearButton" action="/brands/delete_all" method="post">
-              <button type="submit" class="btn-lg btn-danger">Clear All Stores</button>
+              <button type="submit" class="btn-lg btn-danger">Clear All Brands</button>
             </form>
-            <h2>Add a New Store to Our Directory:</h2>
+            <h2>Add a New Brand to Our Directory:</h2>
             <form class="styleForm" action="/add_brand" method="post">
               <label for="brand_name">
               <input class="form-control" id="brand_name" type="text" name="brand_name" placeholder="Name..."></label>
               <br>
               <br>
-              <button class="btn-success btn-lg" type="submit">Add Store</button>
+              <button class="btn-success btn-lg" type="submit">Add Brand</button>
             </form>
           </div>
         </div>

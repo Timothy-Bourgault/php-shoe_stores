@@ -25,6 +25,13 @@
 
     $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
+    $app->get("/", function() use ($app) {
+        $brands = Brand::getAll();
+        $stores = Store::getAll();
+        $result_array = array();
+        return $app['twig']->render('index.html.twig', array('brands' => $brands, 'stores' => $stores));
+    });
+
 return $app;
 
 ?>

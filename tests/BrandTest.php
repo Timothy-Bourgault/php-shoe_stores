@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 
     /**
     * @backupGlobals disabled
@@ -23,6 +23,4 @@
     //
     //
     //  }
-
-
- ?> -->
+?>

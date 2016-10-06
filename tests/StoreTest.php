@@ -18,7 +18,7 @@
 
         protected function tearDown()
         {
-            // Brand::deleteAll();
+            Brand::deleteAll();
             Store::deleteAll();
         }
 
@@ -156,21 +156,15 @@
         function test_addBrand()
         {
           // Arrange
-          $store_name = "Joels Soles";
-          $test_store = new Store($store_name);
+          $test_store = new Store("Joels Soles");
           $test_store->save();
-          $test_brand_name = "Vibram";
-          $test_brand = new Brand($test_brand_name);
+          $test_brand = new Brand("Vibram");
           $test_brand->save();
           // Act
-          $test_store->addBrand($test_Brand);
+          $test_store->addBrand($test_brand);
           $output = $test_store->getStoreBrands();
           // Assert
-          $this->assertEquals(['$test_brand'], $output);
+          $this->assertEquals([$test_brand], $output);
         }
-
-
     }
-
-
 ?>

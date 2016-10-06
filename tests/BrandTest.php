@@ -32,6 +32,17 @@
             $this->assertEquals("Vibram", $output);
         }
 
+        function test_save()
+        {
+            // Arrange
+            $test_brand = new Brand("Vibram");
+            // Act
+            $test_brand->save();
+            $output = Brand::getAll();
+            // Assert
+            $this->assetEquals($test_brand, $output[0]);
+        }
+
 
      }
 ?>

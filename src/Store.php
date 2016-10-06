@@ -34,6 +34,12 @@
             $this->id = $GLOBALS['DB']->lastInsertId();
         }
 
+        function updateName($new_name)
+        {
+            $GLOBALS['DB']->exec("UPDATE store SET name = '{$new_name}' WHERE id = {$this->id};");
+            $this->setName($new_name);
+        }
+
 // Static Functions
 
         static function getAll()

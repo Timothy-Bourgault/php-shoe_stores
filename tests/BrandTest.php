@@ -6,7 +6,7 @@
     **/
 
     require_once "src/Brand.php";
-    require_once "src/Store.php";
+    // require_once "src/Store.php";
 
     $server = 'mysql:host=localhost;dbname=shoe_stores_test';
     $username = 'root';
@@ -36,11 +36,11 @@
         {
             // Arrange
             $test_brand = new Brand("Vibram");
-            // Act
             $test_brand->save();
+            // Act
             $output = Brand::getAll();
             // Assert
-            $this->assetEquals($test_brand, $output[0]);
+            $this->assertEquals($test_brand, $output[0]);
         }
 
 

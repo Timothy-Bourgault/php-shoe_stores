@@ -23,6 +23,11 @@
             $this->name = (string) $new_name;
         }
 
+        function getId()
+        {
+            return $this->id;
+        }
+
         function save()
         {
             $GLOBALS['DB']->exec("INSERT INTO store(name) VALUES ('{$this->getName()}')");

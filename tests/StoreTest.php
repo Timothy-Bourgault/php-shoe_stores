@@ -51,9 +51,9 @@
             $id = "4";
             $test_Store = new Store($name, $id);
             // Act
-            $result = $test_Store->getName();
+            $result = $test_Store->getId();
             // Assert
-            $this->assertEquals($name, $result);
+            $this->assertEquals($id, $result);
         }
 
         // function test_save()

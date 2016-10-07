@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <title>Brand Page</title>
+  </head>
+  <body>
+    <div class="container pageMargin">
+      <hr><hr>
+      <h1>Brand Page for {{ brand.getName }}</h1>
+      <hr>
+      <hr>
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Here are some Stores in town that carry {{ brand.getName }} brand shoes:</h2>
+          <ul>
+            {% if stores is not empty %}
+              {% for store in stores %}
+                <li><a href="/get_store/{{ brand.getId }}/{{store.getId}}">{{ store.getName }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <h3>This Brand currently has no Stores listed...</h3>
+          {% endif %}
+          <form class="clearButton" action="/stores/delete_all" method="post">
+            <button type="submit" class="btn-lg btn-danger">Clear All Stores</button>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <h2>Add a New Store that carries this Brand:</h2>
+          <form class="styleForm form-group" action="/add_brand_store" method="post">
+            <label for="store_name"></label>
+            <input id="store_name" type="text" name="store_name"  placeholder="New Store Name...">
+            <input class="form-control" type="hidden" name="store_id" value="{{ store.getId }}">
+            <br>
+            <br>
+            <button class="btn-success btn-lg" type="submit">Add Store Name</button>
+          </form>
+          <hr>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <p id="storeFooter">
+          <a href="/">👈🏽 Go To Shoe Genie Home Page</a>
+        </p>
+      </div>
+    </div>
+  </body>

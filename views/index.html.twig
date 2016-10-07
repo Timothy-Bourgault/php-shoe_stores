@@ -9,60 +9,17 @@
   </head>
   <body>
     <div class="container pageMargin">
-      <hr><hr>
-      <h1>Shoes In Town</h1>
-      <hr>
-      <hr>
-      <div class="row">
-        <div class="col-sm-6">
-          <h2>List of Stores In Town:</h2>
-          {% if stores is not empty %}
-            <ul>
-              {% for store in stores %}
-                <li><a href="/get_store/{{ store.getId }}">{{ store.getName }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <h3>There aren't any Stores listed yet...</h3>
-            <h3>Enter some into the list with the form below...👇</h3>
-          {% endif %}
-          <form class="clearButton" action="/stores/delete_all" method="post">
-            <button type="submit" class="btn-lg btn-danger">Clear All Stores</button>
-          </form>
-          <h2>Add a New Store to Our Directory:</h2>
-          <form class="styleForm" action="/add_store" method="post">
-            <label for="store_name">
-            <input class="form-control" id="store_name" type="text" name="store_name" placeholder="Name..."></label>
-            <br>
-            <br>
-            <button class="btn-success btn-lg" type="submit">Add Store</button>
-          </form>
-        </div>
-        <div class="col-sm-6 form-group">
-            <h2>List of Brands In Town:</h2>
-            {% if brands is not empty %}
-              <ul>
-                {% for brand in brands %}
-                  <li><a href="/get_brand/{{ brand.getId }}">{{ brand.getName }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              <h3>There aren't any Brands listed yet...</h3>
-              <h3>Enter some into the list with the form below...👇</h3>
-            {% endif %}
-            <form class="clearButton" action="/brands/delete_all" method="post">
-              <button type="submit" class="btn-lg btn-danger">Clear All Brands</button>
-            </form>
-            <h2>Add a New Brand to Our Directory:</h2>
-            <form class="styleForm" action="/add_brand" method="post">
-              <label for="brand_name">
-              <input class="form-control" id="brand_name" type="text" name="brand_name" placeholder="Name..."></label>
-              <br>
-              <br>
-              <button class="btn-success btn-lg" type="submit">Add Brand</button>
-            </form>
+      <div class="jumbotron">
+        <hr><hr>
+        <h1 class="header">Shoe Genie</h1>
+        <hr>
+        <hr>
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>If you would like to search for shoes by Store, you can choose from our list of local Stores <a href='/stores'><img src="https://cdn1.lockerdome.com/uploads/004570b27ce86d63d3dcef9d2b73fdb2987ffbe4dd1a2e8aecb0bde71b0eed3c_medium" alt="a photo of Shoe Salesman" /></a>
+          </div>
+          <div class="col-sm-6">
+            <h2>If you would like to search for shoes by Brand, you can choose from our compilation of Brands <a href='/brands'><img src="http://www.soundfeet.com/wp-content/uploads/best-shoe-brands1.jpg" alt="colage of shoe brand logos" /></a></h2></h2>
           </div>
         </div>
       </div>

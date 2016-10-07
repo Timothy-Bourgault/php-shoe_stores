@@ -5,49 +5,51 @@
     <link href="/css/styles.css" rel="stylesheet" type="text/css">
     <script src="/js/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
-    <title>Store Page</title>
+    <title>Shoe Genie</title>
   </head>
   <body>
     <div class="container pageMargin">
-      <hr><hr>
-      <h1>Store Page for {{ store.getName }}</h1>
-      <hr>
-      <hr>
-      <div class="row">
-        <div class="col-sm-6">
-          <h2>Brands carried by {{ store.getName }}:</h2>
-          <ul>
-            {% if brands is not empty %}
-              {% for brand in brands %}
-                <li><a href="/get_brand/{{ store.getId }}/{{brand.getId}}">{{ brand.getName }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <h3>This Store currently has no Brands listed...</h3>
-          {% endif %}
-          <form class="clearButton" action="/brands/delete_all" method="post">
-            <button type="submit" class="btn-lg btn-danger">Clear All Brands</button>
-          </form>
+      <div class="jumbotron">
+        <hr><hr>
+        <h1 class="header" >Shoe Stores In Town</h1>
+        <hr>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-sm-6">
+              <h2>List of Stores In Town:</h2>
+              {% if stores is not empty %}
+                <ul>
+                  {% for store in stores %}
+                    <li><a href="/get_store/{{ store.getId }}">{{ store.getName }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <h3>There aren't any Stores listed yet...</h3>
+                <h3>Enter some into the list with the form below...👇</h3>
+              {% endif %}
+              <form class="clearButton" action="/stores/delete_all" method="post">
+                <button type="submit" class="btn-md btn-danger">Clear All Stores</button>
+              </form>
+              <h2>Add a New Store to Our Directory:</h2>
+              <form class="styleForm" action="/add_store" method="post">
+                <label for="store_name">
+                <input class="form-control" id="store_name" type="text" name="store_name" placeholder="Store Name..."></label>
+                <br>
+                <br>
+                <button class="btn-success btn-lg" type="submit">Add Store</button>
+              </form>
+          </div>
+          <div class="col-sm-3">
+          </div>
         </div>
-        <div class="col-sm-6">
-          <h2>Add a New Brand for this Store:</h2>
-          <form class="styleForm form-group" action="/add_store_brand" method="post">
-            <label for="brand_name"></label>
-            <input id="brand_name" type="text" name="brand_name"  placeholder="New Brand Name...">
-            <input class="form-control" type="hidden" name="store_id" value="{{ store.getId }}">
-            <br>
-            <br>
-            <button class="btn-success btn-lg" type="submit">Add Brand Name</button>
-          </form>
-          <hr>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <p id="storeFooter">
+        <hr><hr>
+        <p class="returnHome">
           <a href="/">👈🏽 Go To Shoe Genie Home Page</a>
         </p>
       </div>
     </div>
   </body>
+</html>

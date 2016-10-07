@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <script src="/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <title>Store Page</title>
+  </head>
+  <body>
+    <div class="container pageMargin">
+      <div class="jumbotron">
+        <hr><hr>
+        <h1 class="header">Store Page for {{ store.getName }}</h1>
+        <hr>
+        <hr>
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Brands carried by {{ store.getName }}:</h2>
+            {% if store_brands is not empty %}
+              <ul>
+                {% for brand in store_brands %}
+                  <li>{{brand.getName}}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <h3>This Store currently has no Brands listed...</h3>
+            {% endif %}
+            <form class="clearButton" action="/brands/delete_all" method="post">
+              <button type="submit" class="btn-lg btn-danger">Clear All Brands</button>
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <h2>Add a Brand to this Store:</h2>
+            <form action="/add_store_brand/{{store.getId}}" method="post">
+              <label for="brand_name">Select A Brand</label>
+              <select id="brand_name" name="brand_name">
+                {% if brands is not empty %}
+                  {% for brand in brands %}
+                    <option value="{{brand.getId}}">{{brand.getName}}</option>
+                  {% endfor %}
+                {% endif %}
+              </select>
+              <br>
+              <br>
+              <button class="btn-success btn-lg" type="submit">Submit Brand</button>
+            </form>
+            <hr>
+          </div>
+        </div>
+        <hr><hr>
+        <p class="returnHome">
+          <a href="/">👈🏽 Go To Shoe Genie Home Page</a>
+        </p>
+      </div>
+    </div>
+  </body>

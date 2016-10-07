@@ -66,7 +66,6 @@
             return $brands;
         }
 
-
 // Static Functions
 
         static function find($search_id)

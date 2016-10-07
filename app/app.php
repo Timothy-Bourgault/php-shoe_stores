@@ -57,6 +57,13 @@
         return $app['twig']->render('brands.html.twig', array('brands' => Brand::getAll()));
     });
 
+    $app->post('/update_store_name/{id}', function($id) use ($app) {
+      $selected_store = Store::find($id);
+      $store_name = $_POST['store_name'];
+      $selected_store->updateName($store_name);
+      return $app['twig']->render("store.html.twig", array('store' => $selected_store, 'brands' => Brand::getAll(), 'store_brands' => $selected_store->getStoreBrands()));
+    });
+
     $app->post("/add_brand", function() use ($app) {
         $name = $_POST['brand_name'];
         $new_brand = new Brand($name);

@@ -12,6 +12,23 @@
       <div class="jumbotron">
         <hr><hr>
         <h1 class="header">Store Page for {{ store.getName }}</h1>
+        <div class="pageMargin" class="container">
+          <hr>
+          <hr>
+          <h2>Update Store Name</h2>
+          <hr>
+          <hr>
+          <div class="container">
+            <form class="styleForm form-group" action="/update_store_name/{{store.getId}}" method="post">
+              <label for="store_name">Make an Update:</label>
+              <input class="form-control" id="store_name" type="text" name="store_name" placeholder="New Name...">
+              <br>
+              <br>
+              <button class="btn-success btn-lg" type="submit">Update</button>
+              <hr>
+            </form>
+          </div>
+        </div>
         <hr>
         <hr>
         <div class="row">

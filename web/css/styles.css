@@ -5,7 +5,8 @@
 
 .header {
   text-align: center;
-  font-size: 5em;
+  font-size: 10em;
+  font-family: 'Ruslan Display', cursive;
 }
 
 body {
@@ -14,4 +15,16 @@ body {
 
 .pageMargin {
   margin-top: 8em;
+}
+
+h2 {
+  font-family: 'Baloo Da', cursive;
+}
+
+h3 {
+  font-family: 'Almendra SC', serif;
+}
+
+li {
+  font-family: 'Changa', sans-serif;
 }

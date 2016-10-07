@@ -84,12 +84,12 @@
         $new_store = Store::find($store_name);
         $found_brand = Brand::find($id);
         $found_brand->addStore($new_store);
-        return $app['twig']->render('brand.html.twig', array('brand' => $found_brand, 'stores' => Store::getAll(), 'brand_stores' => $found_brand->getBrandStores()));
+        return $app['twig']->render('brand.html.twig', array('brand' => $found_brand, 'stores' => Store::getAll(), 'brand_stores' => $found_brand->getBrandStores(), 'brands' => Store::getAll()));
     });
 
     $app->get("/get_brand/{id}", function($id) use ($app) {
-        $brand = Brand::find($id);
-        return $app['twig']->render('brand.html.twig', array('brand' => $brand));
+        $found_brand = Brand::find($id);
+        return $app['twig']->render('brand.html.twig', array('brand' => $found_brand, 'stores' => Store::getAll(), 'brand_stores' => $found_brand->getBrandStores(), 'brands' => Store::getAll()));
     });
 
     $app->post("/store_brands/delete_all", function() use ($app) {

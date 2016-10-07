@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8080
--- Generation Time: Oct 07, 2016 at 03:34 PM
+-- Generation Time: Oct 07, 2016 at 03:33 PM
 -- Server version: 5.7.12
 -- PHP Version: 5.6.22
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shoe_stores_test`
+-- Database: `shoe_stores`
 --
-CREATE DATABASE IF NOT EXISTS `shoe_stores_test` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `shoe_stores_test`;
+CREATE DATABASE IF NOT EXISTS `shoe_stores` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `shoe_stores`;
 
 -- --------------------------------------------------------
 
@@ -33,6 +33,19 @@ CREATE TABLE `brand` (
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`id`, `name`) VALUES
+(36, 'Nike'),
+(37, 'Timberland'),
+(38, 'Vibram'),
+(39, 'Sketchers'),
+(40, 'Adidas'),
+(41, 'New Balance'),
+(42, 'Fila');
+
 -- --------------------------------------------------------
 
 --
@@ -43,6 +56,17 @@ CREATE TABLE `store` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `store`
+--
+
+INSERT INTO `store` (`id`, `name`) VALUES
+(19, 'Harolds Boots'),
+(20, 'Matildas Palace'),
+(21, 'Foot Locker'),
+(22, 'Payless Shoe Source'),
+(23, 'Nike Outlet');
 
 -- --------------------------------------------------------
 
@@ -61,34 +85,23 @@ CREATE TABLE `store_brand` (
 --
 
 INSERT INTO `store_brand` (`id`, `store_id`, `brand_id`) VALUES
-(1, 12, 179),
-(2, 13, 191),
-(3, 14, 203),
-(4, 15, 215),
-(5, 16, 227),
-(6, 17, 239),
-(7, 18, 251),
-(8, 19, 263),
-(9, 20, 275),
-(10, 21, 287),
-(11, 22, 299),
-(12, 23, 311),
-(13, 24, 323),
-(14, 25, 335),
-(15, 347, 26),
-(16, 359, 27),
-(17, 371, 31),
-(18, 383, 33),
-(19, 395, 35),
-(20, 407, 37),
-(21, 419, 42),
-(22, 431, 45),
-(23, 443, 48),
-(24, 455, 53),
-(25, 467, 60),
-(26, 479, 69),
-(27, 481, 87),
-(28, 493, 88);
+(1, 18, 33),
+(2, 18, 34),
+(3, 18, 35),
+(4, 19, 37),
+(5, 19, 39),
+(6, 19, 38),
+(7, 20, 38),
+(8, 20, 40),
+(9, 20, 42),
+(10, 21, 38),
+(11, 21, 37),
+(12, 23, 37),
+(13, 19, 39),
+(14, 21, 39),
+(15, 23, 39),
+(16, 20, 37),
+(17, 22, 37);
 
 --
 -- Indexes for dumped tables
@@ -123,17 +136,17 @@ ALTER TABLE `store_brand`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=494;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `store_brand`
 --
 ALTER TABLE `store_brand`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -19,7 +19,7 @@
           <ul>
             {% if brands is not empty %}
               {% for brand in brands %}
-                <li><a href="/get_brand/{{ stylist.getId }}/{{brand.getId}}">{{ brand.getName }}</a>
+                <li><a href="/get_brand/{{ store.getId }}/{{brand.getId}}">{{ brand.getName }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-sm-6">
           <h2>Add a New Brand for this Store:</h2>
-          <form class="styleForm form-group" action="/add_brand" method="post">
+          <form class="styleForm form-group" action="/add_store_brand" method="post">
             <label for="brand_name"></label>
             <input id="brand_name" type="text" name="brand_name"  placeholder="New Brand Name...">
             <input class="form-control" type="hidden" name="store_id" value="{{ store.getId }}">

@@ -51,6 +51,22 @@
         return $app->redirect("/");
     });
 
+    $app->post("/add_store_brand", function() use ($app) {
+        $name = $_POST['brand_name'];
+        $id = $_POST['id'];
+        $new_brand = new Brand($name, $id);
+        $new_brand->save();
+        $found_store = Store::find($store_id);
+        $brands = $found_store->getStoreBrands();
+        return $app['twig']->render('stores.html.twig', array('brands' => $brands, 'store' => $found_store));
+    });
+
+    $app->get("/get_brand/{id}/{id2}", function($id,$id2) use ($app) {
+        $brand = Brand::find($id2);
+        $store = Store::find($id);
+        return $app['twig']->render('stores.html.twig', array('brand' => $brand, 'store' => $store));
+    });
+
     $app->post("/brands/delete_all", function() use ($app) {
         Brand::deleteAll();
         return $app->redirect("/");

@@ -7,3 +7,11 @@
   text-align: center;
   font-size: 5em;
 }
+
+body {
+  background-color: #1265ea;
+}
+
+.pageMargin {
+  margin-top: 8em;
+}
